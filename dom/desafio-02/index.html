@@ -6,10 +6,10 @@
         <button v-on:click="alerta">Exibir Alerta</button>
     </div>
     
-    <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
+    <!-- 2) Escute o evento "keyup" e armazene o valor na propriedade
         data (dica: event.target.value) -->
     <div>
-        <input v-on:keydown="escutando" type="text">
+        <input v-on:keyup="valor = $event.target.value" type="text">
         <p>{{ valor }}</p>
     </div>
     
