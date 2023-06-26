@@ -15,7 +15,8 @@
 }
 
 .classeCSS1 {
-	font-size: 2vw;
+	font-size: 3vw;
+	background-color: firebrick;
 }
 
 .classeCSS2 {
@@ -33,4 +34,15 @@
 
 .userClasse3 {
 	font-size: 5vw;
+}
+
+.barra-progresso {
+	height: 30px;
+	width: 500px;
+	border: 1px solid black;
+}
+
+.progresso {
+	height: 100%;
+	background-color: red;
 }

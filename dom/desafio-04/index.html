@@ -8,21 +8,21 @@
 	com id "efeito" para associar as classes CSS. -->
 	<h2>#01</h2>
 	<div>
-		<button @click="iniciarEfeito()" >Iniciar Efeito</button>
-		<div :class="aplicarEfeito()" id="efeito"></div>
+		<button @click="iniciarEfeito" >Iniciar Efeito</button>
+		<div :class="classe1" id="efeito"></div>
 	</div>
 	
 	<!-- 2) Crie duas classes CSS e associe a div usando a
 		sintaxe de array -->
 	<h2>#02</h2>
-	<div :class="['classeCSS1', 'classeCSS2']">Estava sem classe CSS!</div>
+	<div :class="[{classeCSS1}, 'classeCSS2']">Estava sem classe CSS!</div>
 
 	<!-- 3) Aplique na div abaixo a classe informada pelo usuário
 		(crie classe CSS de exemplo). -->
 	<h2>#03</h2>
 	<div>
 		<input type="text" v-model="userClass">
-		<div :class="[userClass]">Hello</div>
+		<div :class="userClass">Hello</div>
 	</div>
 
 	<!-- 4) Aplique na div abaixo a classe informada pelo usuário e
@@ -30,16 +30,16 @@
 	<h2>#04</h2>
 	<div>
 		<input type="text" v-model="userClass2">
-		<input type="text" v-model="userClass3">
-		<div :class="['userClass2', 'userClass3']">Ressucita</div>
+		<input type="text" @input="setClasse">
+		<div :class="userClass2, classeCSS1">Ressucita</div>
 	</div>
 
 	<!-- 5) Repita 3) mas utilizando estilos ao invés de classes CSS.
     Associe os estilos a div abaixo  -->
 	<h2>#05</h2>
 	<div>
-		<input type="text">
-		<div></div>
+		<input type="text" v-model="cor5">
+		<div :style="[edicoes, {backgroundColor: cor5}]"></div>
 	</div>
 
 	<!-- 6) Crie uma barra de progresso simples com setInterval 
@@ -47,7 +47,9 @@
 	<h2>#06</h2>
 	<div>
 		<button @click="iniciarProgresso">Iniciar</button>
-		<div></div>
+		<div :class="'barra-progresso'">
+			<div class="progresso" :style="{width}"></div>
+		</div>
 	</div>
 </div>
 <script src="app.js"></script>
