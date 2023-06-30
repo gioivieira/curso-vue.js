@@ -11,6 +11,11 @@
         <h1>{{ cor }}</h1>
         <p>{{ i }}</p>
     </template>
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <span v-for="(value, key, i) in pessoa">{{ key }} = {{ value }}  ({{ i + 1 }}) </span>
+        </li>
+    </ul>
 </div>
 
 <script>
