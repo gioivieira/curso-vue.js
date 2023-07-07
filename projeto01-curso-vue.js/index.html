@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="projeto01">
+    <div :class="'combate'">
+        <section>
+            <p :class="'jogador'">Jogador</p>
+            <div :class="'barra'"></div>
+            <p>{{ porcentagemJogador }}%</p>
+        </section>
+        <section>
+            <p :class="'monstro'">Monstro</p>
+            <div :class="'barra'"></div>
+            <p>{{ porcentagemMonstro }}%</p>
+        </section>
+    </div>
+    <div :class="'botoes'">
+            <section>
+                <p v-show="vitorioso">Vocẽ ganhou!</p>
+                <p v-show="vitorioso === false">Você perdeu!</p>
+                <button @click="botaoIniciar()" v-if="iniciarClicado || vitorioso !== null" :class="'iniciar'">INICIAR NOVO JOGO</button>
+            </section>
+            <section v-if="!iniciarClicado && vitorioso === null">
+                <button @click="funcaoAtaque()" :class="'ataque'">ATAQUE</button>
+                <button @click="funcaoAtaqueEspecial()" :class="'ataqueEspecial'">ATAQUE ESPECIAL</button>
+                <button @click="funcaoCurar()" :class="'curar'">CURAR</button>
+                <button @click="iniciarClicado = !iniciarClicado" :class="'desistir'">DESISTIR</button>
+            </section>
+    </div>
+
+    <ul>
+        <li v-for="ataque in listaAtaques">{{ ataque }}</li>
+    </ul>
+</div>
+<script src="app.js"></script>

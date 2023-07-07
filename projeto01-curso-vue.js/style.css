@@ -1,0 +1,59 @@
+.combate {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 2vw;
+    font-size: 1.5vw;
+}
+.jogador {
+    font-size: 2.5vw;
+}
+
+.monstro {
+    font-size: 2.5vw;
+}
+
+.barra {
+    width: 40vw;
+    height: 3vh;
+    border: 1px solid white;
+    background-color: green;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;    
+}
+
+.iniciar {
+    background-color: blue;
+    border: none;
+    font-size: 1.3vw;
+    color: white;
+}
+.ataque {
+    background-color: red;
+    border: none;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.ataqueEspecial {
+    background-color: orange;
+    border: none;
+    font-size: 1.3vw;
+}
+
+.curar {
+    background-color: green;
+    border: none;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.desistir {
+    background-color: grey;
+    border: none;
+    font-size: 1.3vw;
+}
+
