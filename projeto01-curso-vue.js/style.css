@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-    padding-bottom: 2vw;
+    margin-bottom: 1vw;
     font-size: 1.5vw;
 }
 .jogador {
@@ -20,8 +20,7 @@
 .barra {
     width: 40vw;
     height: 3vh;
-    border: 1px solid white;
-    background-color: green;
+    border: 1px solid black;
 }
 
 .botoes {
@@ -59,5 +58,10 @@
     background-color: grey;
     border: none;
     font-size: 1.3vw;
+}
+
+li {
+    list-style: none;
+    margin-top: 0.7vw;
 }
 
