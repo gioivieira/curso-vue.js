@@ -14,22 +14,21 @@
             <p>{{ porcentagemMonstro }}%</p>
         </section>
     </div>
+    <p v-show="voceGanhou()">Vocẽ ganhou!</p>
+    <p v-show="vocePerdeu()">Você perdeu!</p>
+    <p v-show="porcentagemJogador === 0 && porcentagemMonstro === 0">Empatou!</p>
     <div :class="'botoes'">
-            <section>
-                <p v-show="vitorioso">Vocẽ ganhou!</p>
-                <p v-show="vitorioso === false">Você perdeu!</p>
-                <button @click="botaoIniciar()" v-if="iniciarClicado || vitorioso !== null" :class="'iniciar'">INICIAR NOVO JOGO</button>
-            </section>
+            <button @click="botaoIniciar()" v-if="iniciarClicado || vitorioso !== null" :class="'iniciar'">INICIAR NOVO JOGO</button>
             <section v-if="!iniciarClicado && vitorioso === null">
                 <button @click="funcaoAtaque()" :class="'ataque'">ATAQUE</button>
                 <button @click="funcaoAtaqueEspecial()" :class="'ataqueEspecial'">ATAQUE ESPECIAL</button>
                 <button @click="funcaoCurar()" :class="'curar'">CURAR</button>
-                <button @click="iniciarClicado = !iniciarClicado" :class="'desistir'">DESISTIR</button>
+                <button @click="botaoDesistir()" :class="'desistir'">DESISTIR</button>
             </section>
     </div>
 
     <ul>
-        <li v-for="ataque in listaAtaques">{{ ataque }}</li>
+        <li v-show="!iniciarClicado" v-for="ataque in listaAtaques">{{ ataque }}</li>
     </ul>
 </div>
 <script src="app.js"></script>
