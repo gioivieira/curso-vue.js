@@ -94,8 +94,8 @@ new Vue({
                 this.porcentagemJogador -= this.ataqueMonstro
                 this.porcentagemMonstro -= this.ataqueJogador 
 
-                this.listaAtaques.push(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
-                this.listaAtaques.push(`Jogador atingiu monstro com ${this.ataqueJogador}.`) 
+                this.listaAtaques.unshift(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
+                this.listaAtaques.unshift(`Jogador atingiu monstro com ${this.ataqueJogador}.`) 
             }
 
             if(this.porcentagemJogador < 20){
@@ -127,8 +127,8 @@ new Vue({
                 this.porcentagemJogador -= this.ataqueMonstro
                 this.porcentagemMonstro -= this.ataqueJogador 
 
-                this.listaAtaques.push(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
-                this.listaAtaques.push(`Jogador atingiu monstro com ${this.ataqueJogador}.`)
+                this.listaAtaques.unshift(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
+                this.listaAtaques.unshift(`Jogador atingiu monstro com ${this.ataqueJogador}.`)
             }
 
             if(this.porcentagemJogador < 20){
@@ -164,8 +164,8 @@ new Vue({
                     this.porcentagemJogador = 100
                 }
 
-                this.listaAtaques.push(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
-                this.listaAtaques.push(`Jogador ganhou força de ${this.ataqueJogador}.`)
+                this.listaAtaques.unshift(`Monstro atingiu jogador com ${this.ataqueMonstro}.`)
+                this.listaAtaques.unshift(`Jogador ganhou força de ${this.ataqueJogador}.`)
                 }
             }
 
