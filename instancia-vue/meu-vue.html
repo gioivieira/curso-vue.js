@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<div id="app"></div>
+    {{ nome }} {{ sobrenome }} {{ 1 + 1 }}
+<script>
+    function MeuVue(params) {
+        this.$el = document.querySelector(params.el)
+        this.$data = params.data 
+
+        for(let atr in this.$data) {
+            Object.defineProperty(this, atr, {
+                get: () => {
+                    return this.$data[atr]
+                },
+                set: value => {
+                    this.$data[atr] = value
+                }
+            })
+        }
+    }
+
+    const vm = new MeuVue({
+        el: "#app",
+        data: {
+            nome: "Giovana",
+            sobrenome: "Vieira"
+        }
+    })
+
+    console.log(vm.nome)
+    console.log(vm.$data.nome)
+
+    vm.nome = 'Maya'
+    console.log(vm.nome)
+    console.log(vm.$data.nome)
+
+    vm.$data.idade = 5
+    console.log(vm.idade)
+</script>
